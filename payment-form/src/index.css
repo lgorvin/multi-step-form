@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'UbuntuReg';
+  src: url('./assets/fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'UbuntuMed';
+  src: url('./assets/fonts/Ubuntu-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'UbuntuBol';
+  src: url('./assets/fonts/Ubuntu-Bold.ttf') format('truetype');
+}
+
+body {
+  font-family: "UbuntuReg";
+}
