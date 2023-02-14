@@ -34,6 +34,7 @@ const StepOne: React.FC<Props> = (props) => {
         id="input-demo"
         withAsterisk
         label="Name"
+        error={props.name == "" ? "Please provide a name" : ""}
       >
         <Input
           required
@@ -47,6 +48,7 @@ const StepOne: React.FC<Props> = (props) => {
         id="input-demo"
         withAsterisk
         label="Email Address"
+        error={props.email == "" ? "Please provide an email" : ""}
       >
         {/* <Input id="input-demo" placeholder="e.g. stephenking@lorem.com" /> */}
         <Autocomplete
