@@ -159,7 +159,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="bg-white absolute top-[99px] left-1/2 transform -translate-x-1/2 h-[425px] w-[350px] rounded-lg shadow-lg">
+          <div className="bg-white absolute top-[99px] left-1/2 transform -translate-x-1/2 h-auto w-[350px] rounded-lg shadow-lg">
             {stepOne && <StepOne />}
             {stepTwo && <StepTwo />}
             {stepThree && <StepThree />}

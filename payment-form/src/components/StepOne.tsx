@@ -24,7 +24,11 @@ const StepOne = () => {
       >
         <Input id="input-demo" placeholder="e.g. stephenking@lorem.com" />
       </Input.Wrapper>
-      <Input.Wrapper className="mx-6 mt-6" id="input-demo" label="Phone Number">
+      <Input.Wrapper
+        className="mx-6 mt-6 mb-8"
+        id="input-demo"
+        label="Phone Number"
+      >
         <Input id="input-demo" placeholder="e.g. +1 234 567 890" />
       </Input.Wrapper>
     </>
