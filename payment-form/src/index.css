@@ -17,4 +17,5 @@
 
 body {
   font-family: "UbuntuReg";
+  overflow-x: hidden;
 }
