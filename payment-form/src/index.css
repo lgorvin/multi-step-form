@@ -24,3 +24,8 @@ body {
   background-color: #1C7ED6;
   border: 2px solid #1C7ED6;
 }
+
+.mantine-Checkbox-inner  {
+  margin-top: 12px;
+  margin-right: 8px;
+}

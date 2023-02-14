@@ -13,6 +13,28 @@ function App() {
   const [stepThree, setStepThree] = useState(false as boolean);
   const [stepFour, setStepFour] = useState(false as boolean);
 
+  //Step One Props
+  const [name, setName] = useState("" as string);
+  const [email, setEmail] = useState("" as string);
+  const [phone, setPhone] = useState("" as string);
+  const data =
+    email.trim().length > 0 && !email.includes("@")
+      ? ["gmail.com", "outlook.com", "yahoo.com", "hotmail.com"].map(
+          (provider) => `${email}@${provider}`
+        )
+      : [];
+
+  //Step Two Props
+  const [arcadeBtn, setArcadeBtn] = useState(false as boolean);
+  const [advancedBtn, setAdvancedBtn] = useState(false as boolean);
+  const [proBtn, setProBtn] = useState(false as boolean);
+  const [monthOrYear, setMonthOrYear] = useState(false as boolean);
+
+  //Step Three Props
+  const [onlineServ, setOnlineServ] = useState(false as boolean);
+  const [lgStorage, setLgStorage] = useState(false as boolean);
+  const [customProf, setCustomProf] = useState(false as boolean);
+
   return (
     <>
       <MantineProvider withGlobalStyles withNormalizeCSS>
@@ -160,9 +182,38 @@ function App() {
             </div>
           </div>
           <div className="bg-white absolute top-[99px] left-1/2 transform -translate-x-1/2 h-auto w-[350px] rounded-lg shadow-lg">
-            {stepOne && <StepOne />}
-            {stepTwo && <StepTwo />}
-            {stepThree && <StepThree />}
+            {stepOne && (
+              <StepOne
+                name={name}
+                setName={setName}
+                email={email}
+                setEmail={setEmail}
+                phone={phone}
+                setPhone={setPhone}
+              />
+            )}
+            {stepTwo && (
+              <StepTwo
+                arcadeBtn={arcadeBtn}
+                setArcadeBtn={setArcadeBtn}
+                advancedBtn={advancedBtn}
+                setAdvancedBtn={setAdvancedBtn}
+                proBtn={proBtn}
+                setProBtn={setProBtn}
+                monthOrYear={monthOrYear}
+                setMonthOrYear={setMonthOrYear}
+              />
+            )}
+            {stepThree && (
+              <StepThree
+                onlineServ={onlineServ}
+                setOnlineServ={setOnlineServ}
+                lgStorage={lgStorage}
+                setLgStorage={setLgStorage}
+                customProf={customProf}
+                setCustomProf={setCustomProf}
+              />
+            )}
             {stepFour && <StepFour />}
           </div>
 
