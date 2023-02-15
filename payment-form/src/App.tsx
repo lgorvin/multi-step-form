@@ -51,6 +51,18 @@ function App() {
             setStepThree={setStepThree}
             stepFour={stepFour}
             setStepFour={setStepFour}
+            name={name}
+            setName={setName}
+            email={email}
+            setEmail={setEmail}
+            opened={opened}
+            setOpened={setOpened}
+            advancedBtn={advancedBtn}
+            setAdvancedBtn={setAdvancedBtn}
+            arcadeBtn={arcadeBtn}
+            setArcadeBtn={setArcadeBtn}
+            proBtn={proBtn}
+            setProBtn={setProBtn}
           />
           <div className="bg-white absolute top-[99px] left-1/2 transform -translate-x-1/2 h-auto w-[350px] rounded-lg shadow-lg">
             {stepOne && (
