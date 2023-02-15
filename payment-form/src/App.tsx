@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@mantine/core";
-import { MantineProvider, Input } from "@mantine/core";
+import { MantineProvider, Input, Modal, Popover, Text } from "@mantine/core";
 import StepOne from "./components/StepOne";
 import StepTwo from "./components/StepTwo";
 import StepThree from "./components/StepThree";
@@ -34,6 +34,8 @@ function App() {
   const [onlineServ, setOnlineServ] = useState(false as boolean);
   const [lgStorage, setLgStorage] = useState(false as boolean);
   const [customProf, setCustomProf] = useState(false as boolean);
+
+  const [opened, setOpened] = useState(false);
 
   return (
     <>
@@ -244,40 +246,84 @@ function App() {
                   Go Back
                 </button>
               )}
-              <div
-                className={
-                  name && email
-                    ? "hidden"
-                    : "absolute z-10 w-[101px] h-10 right-4"
-                }
-                onClick={() => {
-                  if (!name && email) alert("No name");
-                  if (!email && name) alert("No email");
-                  if (!email && !name) alert("No name or email");
-                }}
-              ></div>
-              <button
-                disabled={name === "" || email == ""}
-                onClick={() => {
-                  if (stepOne) {
-                    setStepOne(false);
-                    setStepTwo(true);
-                  } else if (stepTwo) {
-                    setStepTwo(false);
-                    setStepThree(true);
-                  } else if (stepThree) {
-                    setStepThree(false);
-                    setStepFour(true);
+              {stepOne && (
+                <div
+                  className={
+                    !name && !email
+                      ? `absolute z-10 w-[101px] h-10 right-4`
+                      : `hidden` && !name
+                      ? "absolute z-10 w-[101px] h-10 right-4"
+                      : "hidden" && !email
+                      ? "absolute z-10 w-[101px] h-10 right-4"
+                      : "hidden"
                   }
-                }}
-                className={
-                  !stepOne
-                    ? "bg-blue-900 px-4 py-3 ml-[155px] active:scale-95 duration-300 rounded-md text-white"
-                    : "bg-blue-900 px-4 py-3 ml-[255px] active:scale-95 duration-300 rounded-md text-white"
-                }
+                  onClick={() => {
+                    if (!name && email) setOpened(true);
+                    if (!email && name) setOpened(true);
+                    if (!email && !name) setOpened(true);
+                  }}
+                ></div>
+              )}
+              {stepTwo && (
+                <div
+                  className={
+                    !arcadeBtn && !advancedBtn && !proBtn
+                      ? "absolute z-10 w-[101px] h-10 right-4"
+                      : "hidden"
+                  }
+                  onClick={() => {
+                    if (!arcadeBtn && !advancedBtn && !proBtn) setOpened(true);
+                  }}
+                ></div>
+              )}
+              <Popover
+                position="bottom"
+                width="30%"
+                withArrow
+                shadow="md"
+                opened={opened}
+                onChange={setOpened}
               >
-                {!stepFour ? "Next Step" : "Confirm"}
-              </button>
+                <Popover.Target>
+                  <button
+                    disabled={name === "" || email == ""}
+                    onClick={() => {
+                      if (stepOne) {
+                        setStepOne(false);
+                        setStepTwo(true);
+                      } else if (stepTwo) {
+                        setStepTwo(false);
+                        setStepThree(true);
+                      } else if (stepThree) {
+                        setStepThree(false);
+                        setStepFour(true);
+                      }
+                    }}
+                    className={
+                      !stepOne
+                        ? "bg-blue-900 px-4 py-3 ml-[155px] active:scale-95 duration-300 rounded-md text-white"
+                        : "bg-blue-900 px-4 py-3 ml-[255px] active:scale-95 duration-300 rounded-md text-white"
+                    }
+                  >
+                    {!stepFour ? "Next Step" : "Confirm"}
+                  </button>
+                </Popover.Target>
+
+                <Popover.Dropdown>
+                  {stepOne && (
+                    <Text fw={700} color="red.6" align="center">{`Missing ${
+                      !name && email ? "Name" : ""
+                    }${!email && name ? "Email" : ""}${
+                      !name && !email ? "Name & Email" : ""
+                    }`}</Text>
+                  )}
+                  {stepTwo && (
+                    <Text fw={700} color="red.6" align="center">{`${
+                      !arcadeBtn && !advancedBtn && !proBtn ? "Pick One!" : ""
+                    }`}</Text>
+                  )}
+                </Popover.Dropdown>
+              </Popover>
             </div>
           </div>
         </div>
