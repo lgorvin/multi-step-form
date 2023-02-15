@@ -59,9 +59,9 @@ const StepTwo: React.FC<Props> = (props) => {
           <Image className="ml-4" src={arcade} alt="arcade" width={40} />
           <div className="ml-4">
             <Text
-              className="mr-6"
+              className="mr-11"
               weight={500}
-              size="md"
+              size="lg"
               sx={{ lineHeight: 1 }}
             >
               Arcade
@@ -70,7 +70,7 @@ const StepTwo: React.FC<Props> = (props) => {
               <Text
                 className="mt-2  duration-300"
                 color="dimmed"
-                size="xs"
+                size="md"
                 sx={{ lineHeight: 1 }}
                 mb={5}
                 align="left"
@@ -83,7 +83,7 @@ const StepTwo: React.FC<Props> = (props) => {
                 <Text
                   className="mt-2 duration-300"
                   color="dimmed"
-                  size="xs"
+                  size="md"
                   sx={{ lineHeight: 1 }}
                   mb={5}
                   align="left"
@@ -93,7 +93,7 @@ const StepTwo: React.FC<Props> = (props) => {
                 <Text
                   className="mt-2 duration-300"
                   color="blue.7"
-                  size="xs"
+                  size="md"
                   sx={{ lineHeight: 1 }}
                   mb={5}
                   align="left"
@@ -114,14 +114,19 @@ const StepTwo: React.FC<Props> = (props) => {
         >
           <Image className="ml-4" src={advanced} alt="arcade" width={40} />
           <div className="ml-4">
-            <Text className="" weight={500} size="md" sx={{ lineHeight: 1 }}>
+            <Text
+              className="mr-11"
+              weight={500}
+              size="lg"
+              sx={{ lineHeight: 1 }}
+            >
               Advanced
             </Text>
             {!props.monthOrYear && (
               <Text
                 className="mt-2  duration-300"
                 color="dimmed"
-                size="xs"
+                size="md"
                 sx={{ lineHeight: 1 }}
                 mb={5}
                 align="left"
@@ -134,7 +139,7 @@ const StepTwo: React.FC<Props> = (props) => {
                 <Text
                   className="mt-2 duration-300"
                   color="dimmed"
-                  size="xs"
+                  size="md"
                   sx={{ lineHeight: 1 }}
                   mb={5}
                   align="left"
@@ -144,7 +149,7 @@ const StepTwo: React.FC<Props> = (props) => {
                 <Text
                   className="mt-2 duration-300"
                   color="blue.7"
-                  size="xs"
+                  size="md"
                   sx={{ lineHeight: 1 }}
                   mb={5}
                   align="left"
@@ -166,9 +171,9 @@ const StepTwo: React.FC<Props> = (props) => {
           <Image className="ml-4" src={pro} alt="arcade" width={40} />
           <div className="ml-5">
             <Text
-              className="mr-12"
+              className="mr-20"
               weight={500}
-              size="md"
+              size="lg"
               sx={{ lineHeight: 1 }}
             >
               Pro
@@ -177,7 +182,7 @@ const StepTwo: React.FC<Props> = (props) => {
               <Text
                 className="mt-2 duration-300"
                 color="dimmed"
-                size="xs"
+                size="md"
                 sx={{ lineHeight: 1 }}
                 mb={5}
                 align="left"
@@ -190,7 +195,7 @@ const StepTwo: React.FC<Props> = (props) => {
                 <Text
                   className="mt-2 duration-300"
                   color="dimmed"
-                  size="xs"
+                  size="md"
                   sx={{ lineHeight: 1 }}
                   mb={5}
                   align="left"
@@ -200,7 +205,7 @@ const StepTwo: React.FC<Props> = (props) => {
                 <Text
                   className="mt-2 duration-300"
                   color="blue.7"
-                  size="xs"
+                  size="md"
                   sx={{ lineHeight: 1 }}
                   mb={5}
                   align="left"
