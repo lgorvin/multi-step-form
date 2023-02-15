@@ -9,6 +9,8 @@ type Props = {
   setLgStorage: Dispatch<SetStateAction<boolean>>;
   customProf: boolean;
   setCustomProf: Dispatch<SetStateAction<boolean>>;
+  total: number;
+  setTotal: Dispatch<SetStateAction<number>>;
 };
 
 const StepThree: React.FC<Props> = (props) => {

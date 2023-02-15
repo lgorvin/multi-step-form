@@ -37,6 +37,7 @@ function App() {
   const [customProf, setCustomProf] = useState(false as boolean);
 
   const [opened, setOpened] = useState(false);
+  const [total, setTotal] = useState(0);
 
   return (
     <>
@@ -85,6 +86,8 @@ function App() {
                 setProBtn={setProBtn}
                 monthOrYear={monthOrYear}
                 setMonthOrYear={setMonthOrYear}
+                total={total}
+                setTotal={setTotal}
               />
             )}
             {stepThree && (
@@ -95,9 +98,30 @@ function App() {
                 setLgStorage={setLgStorage}
                 customProf={customProf}
                 setCustomProf={setCustomProf}
+                total={total}
+                setTotal={setTotal}
               />
             )}
-            {stepFour && <StepFour />}
+            {stepFour && (
+              <StepFour
+                arcadeBtn={arcadeBtn}
+                setArcadeBtn={setArcadeBtn}
+                advancedBtn={advancedBtn}
+                setAdvancedBtn={setAdvancedBtn}
+                proBtn={proBtn}
+                setProBtn={setProBtn}
+                monthOrYear={monthOrYear}
+                setMonthOrYear={setMonthOrYear}
+                onlineServ={onlineServ}
+                setOnlineServ={setOnlineServ}
+                lgStorage={lgStorage}
+                setLgStorage={setLgStorage}
+                customProf={customProf}
+                setCustomProf={setCustomProf}
+                total={total}
+                setTotal={setTotal}
+              />
+            )}
           </div>
 
           <div

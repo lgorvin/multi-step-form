@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Input } from "@mantine/core";
 import { ImageCheckbox, ImageCheckboxes } from "./ImageCheckbox";
 import { Switch, Text, Image } from "@mantine/core";
@@ -16,6 +16,8 @@ type Props = {
   setProBtn: Dispatch<SetStateAction<boolean>>;
   monthOrYear: boolean;
   setMonthOrYear: Dispatch<SetStateAction<boolean>>;
+  total: number;
+  setTotal: Dispatch<SetStateAction<number>>;
 };
 
 const StepTwo: React.FC<Props> = (props) => {
@@ -39,6 +41,8 @@ const StepTwo: React.FC<Props> = (props) => {
   };
   //const [monthOrYear, setMonthOrYear] = useState(false as boolean);
 
+  useEffect(() => {}, []);
+
   return (
     <>
       <h1 className="mx-6 mt-6 text-blue-900 font-bold">Select your plan</h1>
@@ -49,7 +53,15 @@ const StepTwo: React.FC<Props> = (props) => {
       {/* <ImageCheckboxes /> */}
       <div>
         <button
-          onClick={handleArcade}
+          onClick={() => {
+            handleArcade();
+            if (props.monthOrYear) {
+              props.setTotal(props.total + 90);
+            } else {
+              props.setTotal(props.total + 9);
+            }
+            //if user clicks option first and then month/year slider then price wont be correct NEED TO FIX
+          }}
           className={
             props.arcadeBtn
               ? "flex items-center w-[86%] mx-6 py-6 rounded-md border-2 group hover:scale-105 duration-300 scale-105 bg-gray-50 border-purple-900"
