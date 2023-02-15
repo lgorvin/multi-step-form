@@ -25,7 +25,6 @@ const StepOne: React.FC<Props> = (props) => {
   return (
     <>
       <h1 className="mx-6 mt-6 text-blue-900 font-bold">Personal info</h1>
-      <h1>{props.phone}</h1>
       <p className="mx-6 text-gray-400">
         Please provide your name, email address, and phone number.
       </p>
@@ -34,10 +33,11 @@ const StepOne: React.FC<Props> = (props) => {
         id="input-demo"
         withAsterisk
         label="Name"
-        error={props.name == "" ? "Please provide a name" : ""}
+        //error={!props.name ? "Please provide a name" : ""}
       >
         <Input
           required
+          value={props.name}
           onChange={(event) => props.setName(event.target.value)}
           id="input-demo"
           placeholder="e.g. Stephen King"
@@ -48,7 +48,7 @@ const StepOne: React.FC<Props> = (props) => {
         id="input-demo"
         withAsterisk
         label="Email Address"
-        error={props.email == "" ? "Please provide an email" : ""}
+        //error={!props.email ? "Please provide an email" : ""}
       >
         {/* <Input id="input-demo" placeholder="e.g. stephenking@lorem.com" /> */}
         <Autocomplete
@@ -64,6 +64,7 @@ const StepOne: React.FC<Props> = (props) => {
         label="Phone Number"
       >
         <Input
+          value={props.phone}
           onChange={(event) => props.setPhone(event.target.value)}
           id="input-demo"
           placeholder="e.g. +1 234 567 890"

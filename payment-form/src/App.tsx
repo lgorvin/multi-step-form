@@ -244,8 +244,20 @@ function App() {
                   Go Back
                 </button>
               )}
+              <div
+                className={
+                  name && email
+                    ? "hidden"
+                    : "absolute z-10 w-[101px] h-10 right-4"
+                }
+                onClick={() => {
+                  if (!name && email) alert("No name");
+                  if (!email && name) alert("No email");
+                  if (!email && !name) alert("No name or email");
+                }}
+              ></div>
               <button
-                disabled={name === ""}
+                disabled={name === "" || email == ""}
                 onClick={() => {
                   if (stepOne) {
                     setStepOne(false);
