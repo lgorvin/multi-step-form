@@ -19,6 +19,12 @@ type Props = {
   setCustomProf: Dispatch<SetStateAction<boolean>>;
   total: number;
   setTotal: Dispatch<SetStateAction<number>>;
+
+  stepTwo: boolean;
+  setStepTwo: Dispatch<SetStateAction<boolean>>;
+
+  stepFour: boolean;
+  setStepFour: Dispatch<SetStateAction<boolean>>;
 };
 
 const StepFour = ({
@@ -30,6 +36,8 @@ const StepFour = ({
   lgStorage,
   customProf,
   total,
+  setStepTwo,
+  setStepFour,
 }: Props): JSX.Element => {
   const prices = {
     arcademonth: 9,
@@ -85,7 +93,13 @@ const StepFour = ({
             }/${monthOrYear ? "yr" : "mo"}`}
           </Text>
         </div>
-        <div className="mt-[-4px]">
+        <div
+          onClick={() => {
+            setStepFour(false);
+            setStepTwo(true);
+          }}
+          className="mt-[-4px] cursor-pointer"
+        >
           <Text className="text-gray-400 underline " fw={500}>
             Change
           </Text>

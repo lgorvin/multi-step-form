@@ -171,6 +171,10 @@ function App() {
                 setCustomProf={setCustomProf}
                 total={total}
                 setTotal={setTotal}
+                stepTwo={stepTwo}
+                setStepTwo={setStepTwo}
+                stepFour={stepFour}
+                setStepFour={setStepFour}
               />
             )}
             {thankYou && <EndPage />}
