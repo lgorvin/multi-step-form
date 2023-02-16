@@ -22,6 +22,7 @@ type Props = {
   setAdvancedBtn: Dispatch<SetStateAction<boolean>>;
   proBtn: boolean;
   setProBtn: Dispatch<SetStateAction<boolean>>;
+  totalChecker: () => void;
 };
 
 const StepButtons: React.FC<Props> = (props) => {
@@ -134,6 +135,15 @@ const StepButtons: React.FC<Props> = (props) => {
               } else {
                 props.setOpened(true);
               }
+              if (props.stepOne) {
+                if (!props.name || !props.email) {
+                  props.setStepOne(true);
+                  props.setOpened(true);
+                } else {
+                  props.setStepTwo(true);
+                }
+              }
+
               props.setStepFour(false);
             }}
             className={
@@ -156,8 +166,29 @@ const StepButtons: React.FC<Props> = (props) => {
             onClick={() => {
               props.setStepOne(false);
               props.setStepTwo(false);
-              props.setStepThree(false);
-              props.setStepFour(true);
+
+              if (props.stepOne) {
+                if (!props.name || !props.email) {
+                  props.setStepOne(true);
+                  props.setOpened(true);
+                } else {
+                  props.setStepTwo(true);
+                }
+              }
+              if (props.stepTwo) {
+                if (!props.advancedBtn && !props.arcadeBtn && !props.proBtn) {
+                  props.setStepTwo(true);
+                  props.setOpened(true);
+                } else {
+                  props.setStepFour(true);
+                }
+              }
+
+              if (props.stepThree) {
+                props.totalChecker();
+                props.setStepThree(false);
+                props.setStepFour(true);
+              }
             }}
             className={
               props.stepFour
