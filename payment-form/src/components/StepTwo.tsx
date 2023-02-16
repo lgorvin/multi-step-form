@@ -41,7 +41,31 @@ const StepTwo: React.FC<Props> = (props) => {
   };
   //const [monthOrYear, setMonthOrYear] = useState(false as boolean);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log(props.monthOrYear);
+    if (!props.monthOrYear) {
+      if (props.arcadeBtn) {
+        props.setTotal(9);
+      }
+      if (props.advancedBtn) {
+        props.setTotal(12);
+      }
+      if (props.proBtn) {
+        props.setTotal(15);
+      }
+    }
+    if (props.monthOrYear) {
+      if (props.arcadeBtn) {
+        props.setTotal(90);
+      }
+      if (props.advancedBtn) {
+        props.setTotal(120);
+      }
+      if (props.proBtn) {
+        props.setTotal(150);
+      }
+    }
+  }, [props.monthOrYear, props.arcadeBtn, props.advancedBtn, props.proBtn]);
 
   return (
     <>
@@ -55,11 +79,7 @@ const StepTwo: React.FC<Props> = (props) => {
         <button
           onClick={() => {
             handleArcade();
-            if (props.monthOrYear) {
-              props.setTotal(props.total + 90);
-            } else {
-              props.setTotal(props.total + 9);
-            }
+
             //if user clicks option first and then month/year slider then price wont be correct NEED TO FIX
           }}
           className={

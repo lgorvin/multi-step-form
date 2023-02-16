@@ -105,7 +105,7 @@ const StepFour = ({
               Online service
             </Text>
             <Text className="text-sky-800 absolute right-12" fw={600}>
-              {`+$${monthOrYear ? prices.onlineyear : prices.onlineyear}${
+              {`+$${monthOrYear ? prices.onlineyear : prices.onlinemonth}${
                 monthOrYear ? "/yr" : "/mo"
               }`}
             </Text>
@@ -138,14 +138,16 @@ const StepFour = ({
       </Paper>
       <div className="flex mx-6 mt-4">
         <Text className="text-gray-400" fw={500}>
-          Total (per month)
+          Total (per {`${monthOrYear ? "year" : "month"}`})
         </Text>
-        <Text size="lg" className="text-blue-800 absolute right-12" fw={600}>
-          +$12/mo {total}
+        <Text
+          style={{ fontSize: "22px" }}
+          className="text-blue-800 absolute right-12 mt-[-7px]"
+          fw={600}
+        >
+          ${total}
         </Text>
       </div>
-      <button className="bg-red-300 px-2 py-2">+10</button>
-      <button className="bg-red-300 px-2 py-2">+20</button>
       <div className="mx-6 mb-6 flex flex-col"></div>
     </>
   );
