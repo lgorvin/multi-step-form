@@ -21,25 +21,21 @@ type Props = {
 };
 
 const StepTwo: React.FC<Props> = (props) => {
-  //const [arcadeBtn, setArcadeBtn] = useState(false as boolean);
   const handleArcade = () => {
     if (!props.advancedBtn && !props.proBtn)
       props.setArcadeBtn(!props.arcadeBtn);
     if (props.advancedBtn || props.proBtn) alert("Uncheck your option first!");
   };
-  //const [advancedBtn, setAdvancedBtn] = useState(false as boolean);
   const handleAdvanced = () => {
     if (!props.arcadeBtn && !props.proBtn)
       props.setAdvancedBtn(!props.advancedBtn);
     if (props.arcadeBtn || props.proBtn) alert("Uncheck your option first!");
   };
-  //const [proBtn, setProBtn] = useState(false as boolean);
   const handlePro = () => {
     if (!props.arcadeBtn && !props.advancedBtn) props.setProBtn(!props.proBtn);
     if (props.advancedBtn || props.arcadeBtn)
       alert("Uncheck your option first!");
   };
-  //const [monthOrYear, setMonthOrYear] = useState(false as boolean);
 
   useEffect(() => {
     console.log(props.monthOrYear);
@@ -74,13 +70,10 @@ const StepTwo: React.FC<Props> = (props) => {
         You have the option for monthly or yearly billing.
       </p>
 
-      {/* <ImageCheckboxes /> */}
       <div>
         <button
           onClick={() => {
             handleArcade();
-
-            //if user clicks option first and then month/year slider then price wont be correct NEED TO FIX
           }}
           className={
             props.arcadeBtn

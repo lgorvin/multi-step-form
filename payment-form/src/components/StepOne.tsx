@@ -12,9 +12,6 @@ type Props = {
 };
 
 const StepOne: React.FC<Props> = (props) => {
-  //   const [name, setName] = useState("" as string);
-  //   const [email, setEmail] = useState("" as string);
-  //   const [phone, setPhone] = useState("" as string);
   const data =
     props.email.trim().length > 0 && !props.email.includes("@")
       ? ["gmail.com", "outlook.com", "yahoo.com", "hotmail.com"].map(
@@ -33,7 +30,6 @@ const StepOne: React.FC<Props> = (props) => {
         id="input-demo"
         withAsterisk
         label="Name"
-        //error={!props.name ? "Please provide a name" : ""}
       >
         <Input
           required
@@ -48,9 +44,7 @@ const StepOne: React.FC<Props> = (props) => {
         id="input-demo"
         withAsterisk
         label="Email Address"
-        //error={!props.email ? "Please provide an email" : ""}
       >
-        {/* <Input id="input-demo" placeholder="e.g. stephenking@lorem.com" /> */}
         <Autocomplete
           value={props.email}
           onChange={props.setEmail}

@@ -23,21 +23,13 @@ type Props = {
 
 const StepFour = ({
   arcadeBtn,
-  setArcadeBtn,
   advancedBtn,
-  setAdvancedBtn,
   proBtn,
-  setProBtn,
   monthOrYear,
-  setMonthOrYear,
   onlineServ,
-  setOnlineServ,
   lgStorage,
-  setLgStorage,
   customProf,
-  setCustomProf,
   total,
-  setTotal,
 }: Props): JSX.Element => {
   const prices = {
     arcademonth: 9,

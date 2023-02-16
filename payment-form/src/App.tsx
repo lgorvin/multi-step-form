@@ -20,12 +20,6 @@ function App() {
   const [name, setName] = useState("" as string);
   const [email, setEmail] = useState("" as string);
   const [phone, setPhone] = useState("" as string);
-  const data =
-    email.trim().length > 0 && !email.includes("@")
-      ? ["gmail.com", "outlook.com", "yahoo.com", "hotmail.com"].map(
-          (provider) => `${email}@${provider}`
-        )
-      : [];
 
   //Step Two Props
   const [arcadeBtn, setArcadeBtn] = useState(false as boolean);
@@ -297,9 +291,6 @@ function App() {
             </div>
           )}
         </div>
-        {/* <div className="h-screen">
-          <Button color="indigo">Settings</Button>
-        </div> */}
       </MantineProvider>
     </>
   );
