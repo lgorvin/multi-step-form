@@ -119,6 +119,8 @@ function App() {
             proBtn={proBtn}
             setProBtn={setProBtn}
             totalChecker={totalChecker}
+            thankYou={thankYou}
+            setThankYou={setThankYou}
           />
           <div className="bg-white absolute top-[99px] left-1/2 transform -translate-x-1/2 h-auto w-[350px] rounded-lg shadow-lg">
             {stepOne && (
