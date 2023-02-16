@@ -22,6 +22,8 @@ type Props = {
   setAdvancedBtn: Dispatch<SetStateAction<boolean>>;
   proBtn: boolean;
   setProBtn: Dispatch<SetStateAction<boolean>>;
+  thankYou: boolean;
+  setThankYou: Dispatch<SetStateAction<boolean>>;
   totalChecker: () => void;
 };
 
@@ -74,140 +76,142 @@ const StepButtons: React.FC<Props> = (props) => {
           </g>
         </svg>
       </div>
-      <div className=" absolute top-7 left-1/2 transform -translate-x-1/2">
-        <div className="grid grid-cols-4 gap-6 items-center">
-          <div
-            onClick={() => {
-              props.setStepOne(true);
-              props.setStepTwo(false);
-              props.setStepThree(false);
-              props.setStepFour(false);
-            }}
-            className={
-              props.stepOne
-                ? "bg-cyan-200 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500 ease-linear"
-                : "bg-transparent border-2 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500 ease-linear"
-            }
-          >
-            <h1
+      {!props.thankYou && (
+        <div className=" absolute top-7 left-1/2 transform -translate-x-1/2">
+          <div className="grid grid-cols-4 gap-6 items-center">
+            <div
+              onClick={() => {
+                props.setStepOne(true);
+                props.setStepTwo(false);
+                props.setStepThree(false);
+                props.setStepFour(false);
+              }}
               className={
                 props.stepOne
-                  ? "font-bold text-base text-black duration-300"
-                  : "font-bold text-base text-white duration-300"
+                  ? "bg-cyan-200 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500 ease-linear"
+                  : "bg-transparent border-2 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500 ease-linear"
               }
             >
-              1
-            </h1>
-          </div>
-          <div
-            onClick={() => {
-              if (props.name && props.email) {
-                props.setStepOne(false);
-                props.setStepTwo(true);
-              } else {
-                props.setOpened(true);
-              }
-              props.setStepThree(false);
-              props.setStepFour(false);
-            }}
-            className={
-              props.stepTwo
-                ? "bg-cyan-200 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500 ease-linear"
-                : "bg-transparent border-2 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500 ease-linear"
-            }
-          >
-            <h1
+              <h1
+                className={
+                  props.stepOne
+                    ? "font-bold text-base text-black duration-300"
+                    : "font-bold text-base text-white duration-300"
+                }
+              >
+                1
+              </h1>
+            </div>
+            <div
+              onClick={() => {
+                if (props.name && props.email) {
+                  props.setStepOne(false);
+                  props.setStepTwo(true);
+                } else {
+                  props.setOpened(true);
+                }
+                props.setStepThree(false);
+                props.setStepFour(false);
+              }}
               className={
                 props.stepTwo
-                  ? "font-bold text-base text-black duration-300"
-                  : "font-bold text-base text-white duration-300"
+                  ? "bg-cyan-200 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500 ease-linear"
+                  : "bg-transparent border-2 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500 ease-linear"
               }
             >
-              2
-            </h1>
-          </div>
-          <div
-            onClick={() => {
-              props.setStepOne(false);
-              if (props.advancedBtn || props.arcadeBtn || props.proBtn) {
-                props.setStepTwo(false);
-                props.setStepThree(true);
-              } else {
-                props.setOpened(true);
-              }
-              if (props.stepOne) {
-                if (!props.name || !props.email) {
-                  props.setStepOne(true);
-                  props.setOpened(true);
-                } else {
-                  props.setStepTwo(true);
+              <h1
+                className={
+                  props.stepTwo
+                    ? "font-bold text-base text-black duration-300"
+                    : "font-bold text-base text-white duration-300"
                 }
-              }
+              >
+                2
+              </h1>
+            </div>
+            <div
+              onClick={() => {
+                props.setStepOne(false);
+                if (props.advancedBtn || props.arcadeBtn || props.proBtn) {
+                  props.setStepTwo(false);
+                  props.setStepThree(true);
+                } else {
+                  props.setOpened(true);
+                }
+                if (props.stepOne) {
+                  if (!props.name || !props.email) {
+                    props.setStepOne(true);
+                    props.setOpened(true);
+                  } else {
+                    props.setStepTwo(true);
+                  }
+                }
 
-              props.setStepFour(false);
-            }}
-            className={
-              props.stepThree
-                ? "bg-cyan-200 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500"
-                : "bg-transparent border-2 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500"
-            }
-          >
-            <h1
+                props.setStepFour(false);
+              }}
               className={
                 props.stepThree
-                  ? "font-bold text-base text-black duration-300"
-                  : "font-bold text-base text-white duration-300"
+                  ? "bg-cyan-200 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500"
+                  : "bg-transparent border-2 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500"
               }
             >
-              3
-            </h1>
-          </div>
-          <div
-            onClick={() => {
-              props.setStepOne(false);
-              props.setStepTwo(false);
-
-              if (props.stepOne) {
-                if (!props.name || !props.email) {
-                  props.setStepOne(true);
-                  props.setOpened(true);
-                } else {
-                  props.setStepTwo(true);
+              <h1
+                className={
+                  props.stepThree
+                    ? "font-bold text-base text-black duration-300"
+                    : "font-bold text-base text-white duration-300"
                 }
-              }
-              if (props.stepTwo) {
-                if (!props.advancedBtn && !props.arcadeBtn && !props.proBtn) {
-                  props.setStepTwo(true);
-                  props.setOpened(true);
-                } else {
+              >
+                3
+              </h1>
+            </div>
+            <div
+              onClick={() => {
+                props.setStepOne(false);
+                props.setStepTwo(false);
+
+                if (props.stepOne) {
+                  if (!props.name || !props.email) {
+                    props.setStepOne(true);
+                    props.setOpened(true);
+                  } else {
+                    props.setStepTwo(true);
+                  }
+                }
+                if (props.stepTwo) {
+                  if (!props.advancedBtn && !props.arcadeBtn && !props.proBtn) {
+                    props.setStepTwo(true);
+                    props.setOpened(true);
+                  } else {
+                    props.setStepFour(true);
+                  }
+                }
+
+                if (props.stepThree) {
+                  props.totalChecker();
+                  props.setStepThree(false);
                   props.setStepFour(true);
                 }
-              }
-
-              if (props.stepThree) {
-                props.totalChecker();
-                props.setStepThree(false);
-                props.setStepFour(true);
-              }
-            }}
-            className={
-              props.stepFour
-                ? "bg-cyan-200 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500"
-                : "bg-transparent border-2 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500"
-            }
-          >
-            <h1
+              }}
               className={
                 props.stepFour
-                  ? "font-bold text-base text-black duration-300"
-                  : "font-bold text-base text-white duration-300"
+                  ? "bg-cyan-200 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500"
+                  : "bg-transparent border-2 rounded-full h-9 w-9 flex justify-center items-center cursor-pointer transition-colors duration-500"
               }
             >
-              4
-            </h1>
+              <h1
+                className={
+                  props.stepFour
+                    ? "font-bold text-base text-black duration-300"
+                    : "font-bold text-base text-white duration-300"
+                }
+              >
+                4
+              </h1>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
