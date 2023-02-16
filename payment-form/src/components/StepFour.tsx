@@ -19,10 +19,8 @@ type Props = {
   setCustomProf: Dispatch<SetStateAction<boolean>>;
   total: number;
   setTotal: Dispatch<SetStateAction<number>>;
-
   stepTwo: boolean;
   setStepTwo: Dispatch<SetStateAction<boolean>>;
-
   stepFour: boolean;
   setStepFour: Dispatch<SetStateAction<boolean>>;
 };
@@ -53,8 +51,6 @@ const StepFour = ({
     storageyear: 20,
     customprofyear: 20,
   };
-  //let total = 0;
-
   return (
     <>
       <h1 className="mx-6 mt-6 text-blue-900 font-bold">Finishing up</h1>
