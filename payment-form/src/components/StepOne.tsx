@@ -21,12 +21,14 @@ const StepOne: React.FC<Props> = (props) => {
 
   return (
     <>
-      <h1 className="mx-6 mt-6 text-blue-900 font-bold">Personal info</h1>
-      <p className="mx-6 text-gray-400">
+      <h1 className="mx-6 md:ml-[360px] md:mr-20 mt-6 text-blue-900 font-bold duration-500">
+        Personal info
+      </h1>
+      <p className="mx-6 md:ml-[360px] text-gray-400 duration-500">
         Please provide your name, email address, and phone number.
       </p>
       <Input.Wrapper
-        className="mx-6 mt-6"
+        className="mx-6 mt-6 md:ml-[360px] md:mr-20 duration-500"
         id="input-demo"
         withAsterisk
         label="Name"
@@ -40,7 +42,7 @@ const StepOne: React.FC<Props> = (props) => {
         />
       </Input.Wrapper>
       <Input.Wrapper
-        className="mx-6 mt-6"
+        className="mx-6 mt-6 md:ml-[360px] md:mr-20 duration-500"
         id="input-demo"
         withAsterisk
         label="Email Address"
@@ -53,7 +55,7 @@ const StepOne: React.FC<Props> = (props) => {
         />
       </Input.Wrapper>
       <Input.Wrapper
-        className="mx-6 mt-6 mb-8"
+        className="mx-6 mt-6 mb-8 md:ml-[360px] md:mr-20 duration-500"
         id="input-demo"
         label="Phone Number"
       >
