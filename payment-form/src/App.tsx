@@ -97,6 +97,7 @@ function App() {
     <>
       <MantineProvider withGlobalStyles withNormalizeCSS>
         <div className="h-screen bg-sky-50">
+          <h1 className="text-sm p-2">Made by LGorvin</h1>
           {!tailwindMd && (
             <StepButtons
               stepOne={stepOne}
