@@ -53,12 +53,18 @@ const StepFour = ({
   };
   return (
     <>
-      <h1 className="mx-6 mt-6 text-blue-900 font-bold">Finishing up</h1>
+      <h1 className="mx-6 mt-6 md:ml-[340px] md:mr-20 duration-500 text-blue-900 font-bold">
+        Finishing up
+      </h1>
 
-      <p className="mx-6 mb-4 text-gray-400">
+      <p className="mx-6 mb-4 md:ml-[340px] md:mr-20 duration-500 text-gray-400">
         Double-check everything looks OK before continuing
       </p>
-      <Paper className="mx-6 bg-gray-100" shadow="sm" p="sm">
+      <Paper
+        className="mx-6 md:w-[470px] md:ml-[340px] bg-gray-100"
+        shadow="sm"
+        p="sm"
+      >
         <div className="flex">
           <Text className="text-sky-800" fw={700}>
             {`${
@@ -139,18 +145,18 @@ const StepFour = ({
         )}
       </Paper>
       <div className="flex mx-6 mt-4">
-        <Text className="text-gray-400" fw={500}>
+        <Text className="text-gray-400 md:ml-[330px]" fw={500}>
           Total (per {`${monthOrYear ? "year" : "month"}`})
         </Text>
         <Text
           style={{ fontSize: "22px" }}
-          className="text-blue-800 absolute right-12 mt-[-7px]"
+          className="text-blue-800 absolute right-7 md:right-14 mt-[-7px]"
           fw={600}
         >
           ${total}
         </Text>
       </div>
-      <div className="mx-6 mb-6 flex flex-col"></div>
+      <div className="mx-6 mb-6 md:mb-10 flex flex-col"></div>
     </>
   );
 };
