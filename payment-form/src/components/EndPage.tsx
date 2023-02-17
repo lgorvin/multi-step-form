@@ -1,13 +1,15 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 
 const EndPage = () => {
+  const tailwindMd = useMediaQuery({ query: "(min-width: 768px)" });
   return (
     <>
-      <div className="flex justify-center mt-20">
+      <div className="flex justify-center mt-20 md:mt-48 duration-300">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="60"
-          height="60"
+          width={tailwindMd ? "80" : "60"}
+          height={tailwindMd ? "80" : "60"}
           viewBox="0 0 80 80"
         >
           <g fill="none">
@@ -23,10 +25,10 @@ const EndPage = () => {
           </g>
         </svg>
       </div>
-      <h1 className="mx-6 mt-2 text-blue-900 font-bold text-center">
+      <h1 className="mx-6 mt-2 md:text-5xl duration-300 text-blue-900 font-bold text-center">
         Thank you!
       </h1>
-      <p className="mx-6 mt-2 text-gray-400 mb-20 text-center">
+      <p className="mx-6 md:mx-24 mt-2 md:text-xl md:mt-4 duration-300 text-gray-400 mb-20 text-center">
         Thanks for comfirming your subscription! We hope you have fun using our
         platform. If you ever need support, please feel free to email us at
         support@loremgaming.com
