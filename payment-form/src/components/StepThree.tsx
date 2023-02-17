@@ -16,11 +16,13 @@ type Props = {
 const StepThree: React.FC<Props> = (props) => {
   return (
     <>
-      <h1 className="mx-6 mt-6 text-blue-900 font-bold">Pick add-ons</h1>
-      <p className="mx-6 mb-4 text-gray-400">
+      <h1 className="mx-6 mt-6 md:ml-[340px] md:mr-20 duration-500 text-blue-900 font-bold">
+        Pick add-ons
+      </h1>
+      <p className="mx-6 mb-4 md:ml-[340px] md:mr-20 duration-500 text-gray-400">
         Add-ons help enhance your gaming experience.
       </p>
-      <div className="mx-6 mb-6 flex flex-col">
+      <div className="mx-6 md:w-[55%] md:ml-[340px] mb-6 md:mb-[-34px] flex flex-col">
         <div
           className={
             props.onlineServ
