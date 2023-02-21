@@ -81,8 +81,8 @@ const StepTwo: React.FC<Props> = (props) => {
           }}
           className={
             props.arcadeBtn
-              ? "flex items-center w-[86%] md:w-[105%] md:h-[200px] md:mx-0 mx-6 py-6 rounded-md border-2 group hover:scale-105 duration-300 scale-105 bg-gray-50 border-purple-900"
-              : "flex items-center w-[86%] md:w-[105%] md:h-[200px] md:mx-0 mx-6 py-6 rounded-md border-2 group hover:scale-105 duration-300"
+              ? "flex items-center w-[86%] md:w-[105%] md:h-auto md:mx-0 mx-6 py-6 rounded-md border-2 group hover:scale-105 duration-300 scale-105 bg-gray-50 border-purple-900"
+              : "flex items-center w-[86%] md:w-[105%] md:h-auto md:mx-0 mx-6 py-6 rounded-md border-2 group hover:scale-105 duration-300"
           }
         >
           {!tailwindMd && (
@@ -154,8 +154,8 @@ const StepTwo: React.FC<Props> = (props) => {
           onClick={handleAdvanced}
           className={
             props.advancedBtn
-              ? "flex items-center w-[86%] md:w-[105%] md:h-[200px] md:mx-4 mx-6 py-6 mt-3 md:mt-0 rounded-md border-2 group hover:scale-105 duration-300 scale-105 bg-gray-50 border-purple-900"
-              : "flex items-center w-[86%] md:w-[105%] md:h-[200px] md:mx-4 mx-6 py-6 mt-3 md:mt-0 rounded-md border-2 group hover:scale-105 duration-300"
+              ? "flex items-center w-[86%] md:w-[105%] md:h-auto md:mx-4 mx-6 py-6 mt-3 md:mt-0 rounded-md border-2 group hover:scale-105 duration-300 scale-105 bg-gray-50 border-purple-900"
+              : "flex items-center w-[86%] md:w-[105%] md:h-auto md:mx-4 mx-6 py-6 mt-3 md:mt-0 rounded-md border-2 group hover:scale-105 duration-300"
           }
         >
           {!tailwindMd && (
@@ -227,8 +227,8 @@ const StepTwo: React.FC<Props> = (props) => {
           onClick={handlePro}
           className={
             props.proBtn
-              ? "flex items-center w-[86%] md:w-[105%] md:h-[200px] md:mx-8 mx-6 py-6 mt-3 md:mt-0 rounded-md border-2 group hover:scale-105 duration-300 scale-105 bg-gray-50 border-purple-900"
-              : "flex items-center w-[86%] md:w-[105%] md:h-[200px] md:mx-8 mx-6 py-6 mt-3 md:mt-0 rounded-md border-2 group hover:scale-105 duration-300"
+              ? "flex items-center w-[86%] md:w-[105%] md:h-auto md:mx-8 mx-6 py-6 mt-3 md:mt-0 rounded-md border-2 group hover:scale-105 duration-300 scale-105 bg-gray-50 border-purple-900"
+              : "flex items-center w-[86%] md:w-[105%] md:h-auto md:mx-8 mx-6 py-6 mt-3 md:mt-0 rounded-md border-2 group hover:scale-105 duration-300"
           }
         >
           {!tailwindMd && (
@@ -288,7 +288,7 @@ const StepTwo: React.FC<Props> = (props) => {
         </button>
       </div>
 
-      <div className="flex justify-center mx-6 md:w-[465px] md:mt-6 md:mx-6 md:mb-[-10px] md:ml-[340px] mt-4 mb-6 duration-300">
+      <div className="flex justify-center mx-6 md:w-[465px] md:mt-6 md:mx-6 md:mb-[-35px] md:ml-[340px] mt-4 mb-6 duration-300">
         <div className="bg-gray-100 rounded-md  w-full h-11 md:h-14 flex justify-center items-center duration-300">
           <h1 className="text-base mx-8 font-bold">Monthly</h1>
           <Switch

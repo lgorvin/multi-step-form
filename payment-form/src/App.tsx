@@ -424,7 +424,7 @@ function App() {
                       className={
                         !stepOne
                           ? "bg-blue-900 px-4 py-3 ml-[155px] active:scale-95 duration-300 rounded-md text-white"
-                          : "bg-blue-900 px-4 py-3 ml-[255px] active:scale-95 duration-300 rounded-md text-white"
+                          : "bg-blue-900 px-4 py-3 ml-[255px]  active:scale-95 duration-300 rounded-md text-white"
                       }
                     >
                       {!stepFour ? "Next Step" : "Confirm"}
