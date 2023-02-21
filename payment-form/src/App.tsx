@@ -24,7 +24,7 @@ function App() {
 
   //Step Two Props
   const [arcadeBtn, setArcadeBtn] = useState(false as boolean);
-  const [advancedBtn, setAdvancedBtn] = useState(false as boolean);
+  const [advancedBtn, setAdvancedBtn] = useState(true as boolean);
   const [proBtn, setProBtn] = useState(false as boolean);
   const [monthOrYear, setMonthOrYear] = useState(false as boolean);
 
