@@ -230,7 +230,7 @@ const StepButtons: React.FC<Props> = (props) => {
                     props.setStepOne(true);
                     props.setOpened(true);
                   } else {
-                    props.setStepTwo(true);
+                    props.setStepFour(true);
                   }
                 }
                 if (props.stepTwo) {
