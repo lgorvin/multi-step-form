@@ -29,7 +29,7 @@ const StepOne: React.FC<Props> = (props) => {
       </p>
       <Input.Wrapper
         className="mx-6 mt-6 md:ml-[340px] md:mr-16 duration-500"
-        id="input-demo"
+        id="input-demo1"
         withAsterisk
         label="Name"
       >
@@ -37,13 +37,13 @@ const StepOne: React.FC<Props> = (props) => {
           required
           value={props.name}
           onChange={(event) => props.setName(event.target.value)}
-          id="input-demo"
+          id="name-input"
           placeholder="e.g. Stephen King"
         />
       </Input.Wrapper>
       <Input.Wrapper
         className="mx-6 mt-6 md:ml-[340px] md:mr-16 duration-500"
-        id="input-demo"
+        id="email-input"
         withAsterisk
         label="Email Address"
       >
@@ -56,13 +56,13 @@ const StepOne: React.FC<Props> = (props) => {
       </Input.Wrapper>
       <Input.Wrapper
         className="mx-6 mt-6 mb-8 md:ml-[340px] md:mr-16 duration-500"
-        id="input-demo"
+        id="phone-input"
         label="Phone Number"
       >
         <Input
           value={props.phone}
           onChange={(event) => props.setPhone(event.target.value)}
-          id="input-demo"
+          id="input-demo3"
           placeholder="e.g. +1 234 567 890"
         />
       </Input.Wrapper>
