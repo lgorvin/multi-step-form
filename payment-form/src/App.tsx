@@ -237,7 +237,7 @@ function App() {
                     }}
                     className={
                       !thankYou
-                        ? "px-4 py-3 ml-2 md:ml-[320px] md:mt-[145px] active:scale-95 duration-300 rounded-md text-gray-400"
+                        ? "px-4 py-3 ml-2 md:ml-[320px] md:mt-[145px] active:scale-95 duration-300 rounded-md text-gray-400 hover:text-black"
                         : "hidden"
                     }
                   >
@@ -305,8 +305,8 @@ function App() {
                         }}
                         className={
                           !stepOne
-                            ? "bg-blue-900 px-4 py-3 float-right mt-36 mr-16 md:mr-10 active:scale-95 duration-300 rounded-md text-white"
-                            : "bg-blue-900 px-4 py-3 float-right mt-36 mr-16 md:mr-10 active:scale-95 duration-300 rounded-md text-white"
+                            ? "bg-blue-900 hover:bg-blue-600 px-4 py-3 float-right mt-36 mr-16 md:mr-10 active:scale-95 duration-300 rounded-md text-white"
+                            : "bg-blue-900 hover:bg-blue-600 px-4 py-3 float-right mt-36 mr-16 md:mr-10 active:scale-95 duration-300 rounded-md text-white"
                         }
                       >
                         {!stepFour ? "Next Step" : "Confirm"}
@@ -358,7 +358,7 @@ function App() {
                         setStepThree(true);
                       }
                     }}
-                    className="px-4 py-3 ml-2 md:ml-[320px] md:mt-[145px] active:scale-95 duration-300 rounded-md text-gray-400"
+                    className="px-4 py-3 ml-2 md:ml-[320px] md:mt-[145px] active:scale-95 duration-300 rounded-md text-gray-400 hover:text-black"
                   >
                     Go Back
                   </button>
@@ -423,8 +423,8 @@ function App() {
                       }}
                       className={
                         !stepOne
-                          ? "bg-blue-900 px-4 py-3 ml-[155px] active:scale-95 duration-300 rounded-md text-white"
-                          : "bg-blue-900 px-4 py-3 ml-[255px]  active:scale-95 duration-300 rounded-md text-white"
+                          ? "bg-blue-900 hover:bg-blue-600 px-4 py-3 ml-[155px] active:scale-95 duration-300 rounded-md text-white"
+                          : "bg-blue-900 hover:bg-blue-600 px-4 py-3 ml-[255px]  active:scale-95 duration-300 rounded-md text-white"
                       }
                     >
                       {!stepFour ? "Next Step" : "Confirm"}
