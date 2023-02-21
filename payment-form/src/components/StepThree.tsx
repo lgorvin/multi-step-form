@@ -11,6 +11,8 @@ type Props = {
   setCustomProf: Dispatch<SetStateAction<boolean>>;
   total: number;
   setTotal: Dispatch<SetStateAction<number>>;
+  monthOrYear: boolean;
+  setMonthOrYear: Dispatch<SetStateAction<boolean>>;
 };
 
 const StepThree: React.FC<Props> = (props) => {
@@ -32,7 +34,9 @@ const StepThree: React.FC<Props> = (props) => {
         >
           <div>
             <Text size="sm" color="indigo.9" className="float-right mt-2">
-              +$1/mo
+              {`+$${props.monthOrYear ? "10" : "1"}/${
+                props.monthOrYear ? "yr" : "mo"
+              }`}
             </Text>
             <Checkbox
               size="md"
@@ -53,7 +57,9 @@ const StepThree: React.FC<Props> = (props) => {
           }
         >
           <Text size="sm" color="indigo.9" className="float-right mt-2">
-            +$2/mo
+            {`+$${props.monthOrYear ? "20" : "2"}/${
+              props.monthOrYear ? "yr" : "mo"
+            }`}
           </Text>
           <Checkbox
             size="md"
@@ -73,7 +79,9 @@ const StepThree: React.FC<Props> = (props) => {
           }
         >
           <Text size="sm" color="indigo.9" className="float-right mt-2">
-            +$2/mo
+            {`+$${props.monthOrYear ? "20" : "1"}/${
+              props.monthOrYear ? "yr" : "mo"
+            }`}
           </Text>
           <Checkbox
             size="md"

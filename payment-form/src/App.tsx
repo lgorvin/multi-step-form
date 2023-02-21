@@ -191,6 +191,8 @@ function App() {
                 setCustomProf={setCustomProf}
                 total={total}
                 setTotal={setTotal}
+                monthOrYear={monthOrYear}
+                setMonthOrYear={setMonthOrYear}
               />
             )}
             {stepFour && (
