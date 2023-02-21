@@ -40,7 +40,13 @@ const StepTwo: React.FC<Props> = (props) => {
   };
 
   useEffect(() => {
-    console.log(props.monthOrYear);
+    console.log(props.arcadeBtn);
+    //console.log(props.advancedBtn);
+    //console.log(props.proBtn);
+  }, [props.arcadeBtn, props.advancedBtn, props.proBtn]);
+
+  useEffect(() => {
+    //console.log(props.monthOrYear);
     if (!props.monthOrYear) {
       if (props.arcadeBtn) {
         props.setTotal(9);
@@ -78,6 +84,7 @@ const StepTwo: React.FC<Props> = (props) => {
         <button
           onClick={() => {
             handleArcade();
+            //console.log(props.arcadeBtn);
           }}
           className={
             props.arcadeBtn

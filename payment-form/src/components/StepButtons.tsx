@@ -196,8 +196,9 @@ const StepButtons: React.FC<Props> = (props) => {
                   if (!props.name || !props.email) {
                     props.setStepOne(true);
                     props.setOpened(true);
+                    props.setStepThree(false);
                   } else {
-                    props.setStepTwo(true);
+                    props.setStepThree(true);
                   }
                 }
 

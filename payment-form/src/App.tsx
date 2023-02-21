@@ -248,11 +248,11 @@ function App() {
                   <div
                     className={
                       !name && !email
-                        ? `absolute mt-36 z-10 w-[101px] h-10 right-20`
+                        ? `absolute mt-36 z-10 w-[101px] h-10 right-10`
                         : `hidden` && !name
-                        ? "absolute z-10 w-[101px] mt-36 h-10 right-20"
+                        ? "absolute z-10 w-[101px] mt-36 h-10 right-10"
                         : "hidden" && !email
-                        ? "absolute z-10 w-[101px] mt-36 h-10 right-20"
+                        ? "absolute z-10 w-[101px] mt-36 h-10 right-10"
                         : "hidden"
                     }
                     onClick={() => {
@@ -266,7 +266,7 @@ function App() {
                   <div
                     className={
                       !arcadeBtn && !advancedBtn && !proBtn
-                        ? "absolute z-10 w-[101px] h-10 right-4"
+                        ? "absolute mt-[-46px] z-10 w-[101px] h-12 right-10"
                         : "hidden"
                     }
                     onClick={() => {
@@ -385,7 +385,7 @@ function App() {
                   <div
                     className={
                       !arcadeBtn && !advancedBtn && !proBtn
-                        ? "absolute z-10 w-[101px] h-10 right-4"
+                        ? "absolute z-10 w-[101px] h-10 pl-[110px] ml-[255px]"
                         : "hidden"
                     }
                     onClick={() => {
