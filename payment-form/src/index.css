@@ -23,6 +23,7 @@ body {
 .mantine-Switch-track {
   background-color: #1C7ED6;
   border: 2px solid #1C7ED6;
+  cursor: pointer;
 }
 
 .mantine-Checkbox-inner  {
