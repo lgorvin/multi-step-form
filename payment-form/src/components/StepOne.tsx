@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Input, Autocomplete } from "@mantine/core";
 import { Dispatch, SetStateAction } from "react";
+import InputMask from "react-input-mask";
 
 type Props = {
   name: string;
@@ -18,6 +19,10 @@ const StepOne: React.FC<Props> = (props) => {
           (provider) => `${props.email}@${provider}`
         )
       : [];
+
+  useEffect(() => {
+    console.log(props.phone.replaceAll("_", "").length);
+  }, [props.phone]);
 
   return (
     <>
@@ -58,12 +63,20 @@ const StepOne: React.FC<Props> = (props) => {
         className="mx-6 mt-6 mb-8 md:ml-[340px] md:mr-16 duration-500"
         id="phone-input"
         label="Phone Number"
+        error={
+          props.phone.replaceAll("_", "").length < 16 &&
+          props.phone.replaceAll("_", "").length > 6
+            ? "Number too short"
+            : ""
+        }
       >
         <Input
           value={props.phone}
           onChange={(event) => props.setPhone(event.target.value)}
           id="input-demo3"
-          placeholder="e.g. +1 234 567 890"
+          placeholder="e.g. +44 234 567 8901"
+          component={InputMask}
+          mask="+44 999 999 9999"
         />
       </Input.Wrapper>
     </>
