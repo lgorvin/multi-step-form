@@ -44,7 +44,7 @@ const StepButtons: React.FC<Props> = (props) => {
             <defs>
               <path id="a" d="M0 0h375v172H0z" />
             </defs>
-            <g fill="none" fill-rule="evenodd">
+            <g fill="none" fillRule="evenodd">
               <mask id="b" fill="#fff">
                 <use xlinkHref="#a" />
               </mask>
@@ -68,9 +68,9 @@ const StepButtons: React.FC<Props> = (props) => {
                   />
                   <g
                     stroke="#FFF"
-                    stroke-linecap="round"
-                    stroke-linejoin="bevel"
-                    stroke-width="5"
+                    strokeLinecap="round"
+                    strokeLinejoin="bevel"
+                    strokeWidth="5"
                   >
                     <path d="m367.336 243.125 15.263-15.549M430.872 251.016l-17.995-15.112M399.36 271.751l-9.94 21.293" />
                   </g>
@@ -104,13 +104,13 @@ const StepButtons: React.FC<Props> = (props) => {
             <g mask="url(#a)">
               <path
                 fill="#6259FF"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M-34.692 543.101C3.247 632.538 168.767 685.017 211.96 612.52c43.194-72.497-66.099-85.653-104.735-160.569-38.635-74.916-68.657-121.674-124.482-104.607-55.824 17.068-55.375 106.32-17.436 195.757Z"
                 clip-rule="evenodd"
               />
               <path
                 fill="#F9818E"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M233.095 601.153c60.679-28.278 92.839-143.526 41.875-171.528-50.965-28.003-57.397 47.579-108.059 75.987-50.662 28.408-82.14 50.207-69.044 88.241 13.096 38.034 74.549 35.578 135.228 7.3Z"
                 clip-rule="evenodd"
               />
