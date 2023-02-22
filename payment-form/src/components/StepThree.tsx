@@ -79,7 +79,7 @@ const StepThree: React.FC<Props> = (props) => {
           }
         >
           <Text size="sm" color="indigo.9" className="float-right mt-2">
-            {`+$${props.monthOrYear ? "20" : "1"}/${
+            {`+$${props.monthOrYear ? "20" : "2"}/${
               props.monthOrYear ? "yr" : "mo"
             }`}
           </Text>
