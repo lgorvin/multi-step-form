@@ -36,6 +36,7 @@ const StepFour = ({
   total,
   setStepTwo,
   setStepFour,
+  setMonthOrYear,
 }: Props): JSX.Element => {
   const prices = {
     arcademonth: 9,
@@ -97,8 +98,7 @@ const StepFour = ({
         </div>
         <div
           onClick={() => {
-            setStepFour(false);
-            setStepTwo(true);
+            setMonthOrYear(!monthOrYear);
           }}
           className="mt-[-4px] cursor-pointer"
         >
