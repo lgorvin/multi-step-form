@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Input } from "@mantine/core";
+import { Input, Popover } from "@mantine/core";
 import { ImageCheckbox, ImageCheckboxes } from "./ImageCheckbox";
 import { Switch, Text, Image } from "@mantine/core";
 import arcade from "../assets/images/icon-arcade.svg";
@@ -22,28 +22,27 @@ type Props = {
 };
 
 const StepTwo: React.FC<Props> = (props) => {
+  const [opened, setOpened] = useState(false);
+  const [opened2, setOpened2] = useState(false);
+  const [opened3, setOpened3] = useState(false);
   const tailwindMd = useMediaQuery({ query: "(min-width: 768px)" });
   const handleArcade = () => {
-    if (!props.advancedBtn && !props.proBtn)
-      props.setArcadeBtn(!props.arcadeBtn);
-    if (props.advancedBtn || props.proBtn) alert("Uncheck your option first!");
+    props.setArcadeBtn(true);
+    props.setAdvancedBtn(false);
+    props.setProBtn(false);
   };
   const handleAdvanced = () => {
-    if (!props.arcadeBtn && !props.proBtn)
-      props.setAdvancedBtn(!props.advancedBtn);
-    if (props.arcadeBtn || props.proBtn) alert("Uncheck your option first!");
+    props.setArcadeBtn(false);
+    props.setAdvancedBtn(true);
+    props.setProBtn(false);
   };
   const handlePro = () => {
-    if (!props.arcadeBtn && !props.advancedBtn) props.setProBtn(!props.proBtn);
-    if (props.advancedBtn || props.arcadeBtn)
-      alert("Uncheck your option first!");
+    props.setArcadeBtn(false);
+    props.setAdvancedBtn(false);
+    props.setProBtn(true);
   };
 
-  useEffect(() => {
-    console.log(props.arcadeBtn);
-    //console.log(props.advancedBtn);
-    //console.log(props.proBtn);
-  }, [props.arcadeBtn, props.advancedBtn, props.proBtn]);
+  useEffect(() => {}, [props.arcadeBtn, props.advancedBtn, props.proBtn]);
 
   useEffect(() => {
     //console.log(props.monthOrYear);
@@ -84,6 +83,7 @@ const StepTwo: React.FC<Props> = (props) => {
         <button
           onClick={() => {
             handleArcade();
+            //setOpened((o) => !o);
             //console.log(props.arcadeBtn);
           }}
           className={
@@ -230,6 +230,7 @@ const StepTwo: React.FC<Props> = (props) => {
             )}
           </div>
         </button>
+
         <button
           onClick={handlePro}
           className={
