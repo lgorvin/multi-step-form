@@ -29,4 +29,13 @@ body {
 .mantine-Checkbox-inner  {
   margin-top: 12px;
   margin-right: 8px;
+  cursor: pointer;
+}
+
+.mantine-Checkbox-input {
+  cursor: pointer;
+}
+
+.mantine-Checkbox-label {
+  cursor: pointer;
 }
